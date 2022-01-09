@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spencer's Awesome Story Editor</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+    <h1>Story Editor</h1>
+    <section id="story">
+      <label for="story_name">
+        Story Name:
+        <input id="story_name" type="text" />
+      </label>
+      <section id="story_buttons">
+        <button onclick="loadStory()">Find and Edit Story</button>
+        <button onclick="saveStory()">Save Your Story</button>
+        <button onclick="displayStory()">Display Your Story</button>
+      </section>
+      <section id="story_msg"></section>
+      <textarea
+        name="story_editor"
+        id="story_editor"
+        cols="30"
+        rows="10"
+        placeholder="write a totally awesome story here."
+      ></textarea>
+    </section>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

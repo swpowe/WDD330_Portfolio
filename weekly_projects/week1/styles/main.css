@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    margin: 5px 5px;
+}
+
+textarea {
+    background-color: lightyellow;
+    border-radius: 5px;
+    height: 250px;
+    width: 800px;
+    padding: 5px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
