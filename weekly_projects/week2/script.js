@@ -1,6 +1,8 @@
+const output = document.getElementById("output_1");
+
 function obj1() {
   let input = document.getElementById("input_1");
-  let output = document.getElementById("output_1");
+//   let output = document.getElementById("output_1");
 
   output.innerText = input.value;
 }
@@ -8,7 +10,7 @@ function obj1() {
 function obj2(num) {
   // let input = document.getElementById('input_2');
   let input = num;
-  let output = document.getElementById("output_1");
+//   let output = document.getElementById("output_1");
 
   if (isNaN(input.value)) {
     errorMesg(2);
@@ -36,10 +38,10 @@ function obj3(num1, num2) {
 function errorMesg(objNum) {
   let input_1 = document.getElementById("input_1");
   let input_2 = document.getElementById("input_2");
-  let output = document.getElementById("output_1");
+  
   if (objNum === 2) {
     alert("Please enter a valid number.");
-    input_1.value = ""; //
+    input_1.value = "";
     console.log("not a number obj: " + objNum);
   } else {
     alert("Please enter a valid number.");
@@ -48,4 +50,13 @@ function errorMesg(objNum) {
     output.innerText = "";
     console.log("not a number obj: " + objNum);
   }
+}
+
+function calculator(num1, num2, callback) {
+    callback(num1, num2)
+}
+
+ subtract = (num1, num2) => {
+    // let output = document.getElementById("output_1");
+    output.innerText = `Subtracted total: ${num1 - num2}`;
 }

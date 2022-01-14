@@ -1,0 +1,80 @@
+* Week 2 Notes *
+
+Chapter 2 - Basics
+• Good to comment code (multiline or single line)
+• Tools that help build documentation from commented code
+• C-Style syntax (js syntax similar to C)
+• Best practice to insert semi-colons even though ASI (automatic seicolon insertion)
+    • Error prone
+• Be aware of reserved words
+• Primitive data types (string, symbol (es6), number, boolean, undefined, null)
+• If not primitive type then Object
+• const non-primitive variable (array, obj, function) not immutabfa-pull-left
+• Let and Const have block scope
+• Try to keep Global Variables to a min. Not best practice to have global Variables
+• non-primitive value assigned to variable is done by reference
+• Symbols are a new primitive in es6 
+    • Used to create unique values which avoids collisions
+
+
+Chapter 3 - Arrays, Logic, and Loops
+• arrays, sets (es6), maps(es6) various lists of values
+• sets ordered, non-duplicate
+• maps ordered, key value pairs
+• control flow with if, else, switch, while, do..while, for, for-of
+• For of replaces normal for loop with value 
+    • must use const to declare value
+    • for(const value of avengers) {
+        consoole.log(value);
+    }
+• sets are enumerable with for of
+• for of works with maps as well or 
+    • built in keys() function
+    • built in values() function
+    • built in entries() function
+        • for(const [key,value] of RomanNumbers.entries()) {
+            consoole.log(`${key} in roman numbers is ${value}`)
+        }
+Chapter 4 - Functions
+• Named function
+• function express. assigns anonymous function to a variable
+    • const goodbye = function() {
+        console.log('goodbye)
+    }
+    • anonymous ecause the function is not Named
+    • could name it
+• all functions have a name property. anonymous will return an empty string or undefined
+• function constroctor
+    • const hi = new Function('console.log("hi");');
+    • not reccomended. problematic
+• invoke function   
+    • name follow by parentheses
+• all functions return a value
+    • undefined if not specified
+• if params not passed to function args then undefined
+• extra params are discarded but can be access in arguments object of function
+• rest opoerator in es6 is better than arguments object
+    • function rest(...args) {
+        return args
+    }
+    • actual array so all functions and loops like for of work
+• defaults introduced in es6  
+    • function hello(name='world) {
+        console.log('hello ${name});
+    }
+    • can be overriden by passing arg if not default Used
+    • always put defaults at the end of declaration otherwise they become required params
+• Es6 Arrow functions   
+    • const square = x =? x*x;
+    • const add = (x,y) => x + y;
+    • const hello = () => alert('hello world');
+    • perfect for short anonymous functions
+    • can be more than one line but then return must be Used
+• functions defined using function declaration are hoiseted and can be called before declared
+• callback function 
+    • funcation passed as param, called within function
+• foreach
+    • 3 params. 1 is curent value, 2 index, 3 array being called one
+• map
+    • returns a new array that replaces each value win the return of the callback
+• reduce, filter common array functions as well
