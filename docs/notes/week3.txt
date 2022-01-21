@@ -1,0 +1,80 @@
+Object methods, "this"
+• a good example illustrating "this"
+    let user = { name: "John" };
+    let admin = { name: "Admin" };
+
+    function sayHi() {
+    alert( this.name );
+    }
+
+    // use the same function in two objects
+    user.f = sayHi;
+    admin.f = sayHi;
+
+    // these calls have different this
+    // "this" inside the function is the object "before the dot"
+    user.f(); // John  (this == user)
+    admin.f(); // Admin  (this == admin)
+
+    admin['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+•strict mode
+    • calling "this" without an object call will result in undefined
+• non-strict mode will reference the global object "window"
+    • considered an error
+    • "this" should be called in an object context
+• arrow functions have no "this"
+    • they'll use "this" from the outer method
+    • for example 
+        let user = {
+        firstName: "Ilya",
+        sayHi() {
+            let arrow = () => alert(this.firstName);
+            arrow();
+        }
+        };
+
+        user.sayHi(); // Ilya
+Summary
+Functions that are stored in object properties are called “methods”.
+Methods allow objects to “act” like object.doSomething().
+Methods can reference the object as this.
+The value of this is defined at run-time.
+
+When a function is declared, it may use this, but that this has no value until the function is called.
+A function can be copied between objects.
+When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+Please note that arrow functions are special: they have no this. When this is accessed inside an arrow function, it is taken from outside.
+
+Chapter 5 Objects
+• everything in JS is either one of the six primitive data types or its an object
+• JS uses object literals
+    • Allow you to create with properties inside curley braces
+    • Don't require you define a class like in other languages
+    • create quickly
+• Example
+    const superman = {
+        name: 'Superman',
+        'real name': 'Clark Kent',
+        height: 75,
+        weight: 235,
+        hero: true,
+        villain: false,
+        allies: ['Batman','Supergirl','Superboy'],
+        fly() {
+            return 'Up, up and away!';
+        }
+    };
+• Key value pair
+• use quotes for key with space
+    • It's uncommon to break the rules and have to use quotes (like 'real name' would be real_name or realName)
+• ES6 shorthand if variable name matches key
+    const name = 'Iron Man';
+    const realName = 'Tony Stark';
+
+    // long way
+    const ironMan = { name: name, realName: realName };
+
+    // short ES6 way
+    const ironMan = { name, realName };
+• access object properties using dot notation (superman.name) or brackets (superman['name'])
+• ES6 allows for computed properties to calculate keys
