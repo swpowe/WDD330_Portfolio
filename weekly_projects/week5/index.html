@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo App</title>
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header><h1>ToDo</h1></header>
     <section class="items" id="items-section">
-        <!-- <div class="item" id="item-1">
+      <!-- <div class="item" id="item-1">
             <input 
                 class="item-box"
                 type="checkbox" 
@@ -22,12 +22,19 @@
                 class="item-del" 
                 id="item-1-del">X</button>
         </div> -->
+      <section class="items-list"></section>
+      <section class="items-footer">
+        <p><span>3</span> tasks left</p>
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </section>
     </section>
     <section class="add-items">
-        <input type="text" name="item-input" id="item-input">
-        <button class="add-button" id="add-button">Add</button>
+      <input type="text" name="item-input" id="item-input" />
+      <button class="add-button" id="add-button">Add</button>
     </section>
-    
+
     <script type="module" src="main.js"></script>
-</body>
+  </body>
 </html>

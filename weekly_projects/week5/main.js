@@ -1,20 +1,14 @@
-import { displayItems } from "./displayItems.js"
+import * as lsHelper from "./ls.js";
+import * as renderHelper from "./utilities.js"
 
-document.getElementById('add-button').addEventListener('click', addItem);
+console.log("main.js loaded.");
 
-let array = [];
+const items = [{ text: "this is my todo item 1" }, {text: "this is my 2nd todo item 2"}];
 
-displayItems(array); // this should be in a setup or start
+lsHelper.writeToLS('items', items);
 
-function addItem() {
-  let newItem = document.getElementById('item-input');  
-  array.push(newItem.value);
-  displayItems(array);
-  newItem.value = ""; //clear input 
-}
+let value = lsHelper.readFromLS('items');
 
-export function removeItem(index, items) {
-    items.splice(index, 1);
-    document.getElementById("items-section").innerHTML = ""; //?? put in display function?
-    displayItems(items);
-  }
+console.log(value);
+
+renderHelper.renderList(items, 'items-section')
