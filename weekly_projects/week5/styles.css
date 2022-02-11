@@ -56,3 +56,15 @@ input {
   padding: 8px;
   margin-top: 2px;
 }
+
+.button-group button {
+  padding: 5px 10px;
+}
+
+.button-group button:active{ /* use this? */
+  background-color: darkgray;
+}
+
+.button-group .active{ /* or this? */
+  background-color: darkgray;
+}

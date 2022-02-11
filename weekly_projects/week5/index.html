@@ -10,24 +10,15 @@
   </head>
   <body>
     <header><h1>ToDo</h1></header>
-    <section class="items" id="items-section">
-      <!-- <div class="item" id="item-1">
-            <input 
-                class="item-box"
-                type="checkbox" 
-                name="item-1-checkbox" 
-                id="item-1-checkbox">
-            <p>my first task</p>
-            <button 
-                class="item-del" 
-                id="item-1-del">X</button>
-        </div> -->
-      <section class="items-list"></section>
+    <section class="items">
+      <section class="items-list" id="items-list"></section>
       <section class="items-footer">
-        <p><span>3</span> tasks left</p>
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <p><span id="items-left">3</span> tasks left</p>
+        <div class="button-group">
+          <button class="active filter">All</button>
+          <button class="filter">Active</button>
+          <button class="filter">Completed</button>
+        </div>
       </section>
     </section>
     <section class="add-items">
