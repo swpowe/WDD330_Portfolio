@@ -1,20 +1,13 @@
-// import filterView from "./main.js";
-import * as ls from "./ls.js";
+import * as items from "./main.js";
+import * as lsHelper from "./ls.js";
 
-export function qs(selector) {} //!! not sure??
+export function addItem(itemsArray, item) {}
 
-export function onTouch(elementSelector, callback) {} //!! not sure??
-
-export function renderList(list, element) {
-  // for each in list
-  // append to element
-  // clear the current list
-  //!! need to render checkmark based on item prop
-  let itemsSection = document.getElementById(element);
-  itemsSection.innerHTML = "";
+export function displayList(list, element) {
+  const output = document.getElementById(element);
+  output.innerHTML = "";
 
   for (let i = 0; i < list.length; i++) {
-    const item = list[i];
     let div = document.createElement("div");
     let box = document.createElement("input");
     let p = document.createElement("p");
@@ -28,93 +21,50 @@ export function renderList(list, element) {
     box.classList.add("item-box");
     box.id = `item-${i + 1}-checkbox`;
     box.name = `item-${i + 1}-checkbox`;
+    box.addEventListener("click", (e) => status(e));
 
-    if (item.completed) {
-      box.checked = true;
-      div.classList.add("completed");
-    }
+    // if (item.completed) {
+    //   box.checked = true;
+    //   div.classList.add("completed");
+    // }
 
     del.classList.add("item-del");
     del.id = `item-${i + 1}-del`;
     del.textContent = "X";
+    del.addEventListener("click", (e) => removeItem(e, list));
 
-    p.innerHTML = `${list[i].text}`;
+    p.innerHTML = `${list[i].item}`;
 
-    document.getElementById('items-left').innerHTML = list.length;
+    document.getElementById("items-left").innerHTML = list.length; //!! not list length, filtered complete and get that length
 
-    // box.addEventListener("click", (e) => {
-    //   if (box.checked) {
-    //     e.path[1].classList.add("completed");
-    //     //!! add object "completed" set true here?
-    //   } else {
-    //     e.path[1].classList.remove("completed");
-    //   }
-    // });
-
-    del.addEventListener("click", (e) => filterView(e));
-
-    ///////
-    // const delButtons = document.querySelectorAll(".item-del");
-    // delButtons.forEach((del) => {
-    //   del.addEventListener("click", (e) => {
-    //     console.log(String(e.path[1].id));
-    //     let itemNum = String(e.path[1].id).match(/\d+/gm);
-    //     renderHelper.removeItem(itemNum - 1, items);
-    //   });
-    // });
-
-    /////
+    // del.addEventListener("click", (e) => filterView(e));
 
     div.appendChild(box);
     div.appendChild(p);
     div.appendChild(del);
 
-    itemsSection.appendChild(div);
+    output.appendChild(div);
   }
 }
 
-export function filterItems(e, items) {
-  //!! add logic for what type of filter based on string
-  // if ALL filteredItems = items
-  // if ACTIVE filteredItems = !completed
-  // if COMPLETED filteredItems = completed
-  let filteredItems = [];
-
-  if (e.target.innerHTML === "Active") {
-    console.log(e.target.innerHTML);
-    for (var i = 0; i < items.length; i++) {
-      if (!items[i].completed) {
-        // console.log(items[i]);
-        filteredItems.push(items[i]);
-      }
-    }
-  } else if (e.target.innerHTML === "Completed") {
-    console.log(e.target.innerHTML);
-    for (var i = 0; i < items.length; i++) {
-      if (items[i].completed) {
-        // console.log(items[i]);
-        filteredItems.push(items[i]);
-      }
-    }
-  } else {
-    filteredItems = items;
-  }
-
-  console.log(filteredItems);
-  renderList(filteredItems, "items-list");
+function removeItem(e, list) {
+  //!! change to using local storage
+  let index = getIndex(e);
+  list.splice(index, 1);
+  displayList(list, "items-list");
 }
 
-export function removeItem(index, items) {
-  items.splice(index, 1);
-  // document.getElementById("items-section").innerHTML = ""; //?? put in display function?
-  // displayItems(items);
-  renderList(items, "items-list");
-  // console.log(`index: ${index} + items: ${items}`)
+function status(e) {
+  let index = getIndex(e);
+  let items = lsHelper.readFromLS("items");
+  console.log(e);
+//   if (items[index].completed) {
+//     items[index].completed = false;
+//   } else {
+//     items[index].completed = true;
+//   }
 }
 
-function filterView(e) {
-  console.log(String(e.path[1].id));
-  let itemNum = String(e.path[1].id).match(/\d+/gm);
-  let items = ls.readFromLS("items");
-  removeItem(itemNum - 1, items);
+function getIndex(e) {
+  return String(e.path[1].id).match(/\d+/gm);
 }

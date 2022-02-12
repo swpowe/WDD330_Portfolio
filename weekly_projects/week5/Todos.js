@@ -1,5 +1,5 @@
-export class ToDoItem {
-  constructor(item, completed) {
+export default class ToDoItem {
+  constructor(item, completed = false) {
     this.item = item;
     this.completed = completed;
   }
@@ -7,4 +7,6 @@ export class ToDoItem {
   logItem() {
     console.log(`ToDo: ${this.item}`);
   }
+
+  
 }
