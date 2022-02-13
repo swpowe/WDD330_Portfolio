@@ -1,0 +1,34 @@
+html{
+    background-color: #134767;
+}
+body{
+    background-color: #EFF5FB;
+    max-width: 950px;
+    text-align: center;
+    margin: auto;
+    padding: 60px;
+
+}
+  
+    header{
+        background-color: rgb(107, 116, 116);
+        text-align: center;
+        margin: auto;
+    }
+    main{
+        background-color: #9aa0a7;
+        align-content: center;
+        text-align: left;
+        margin: auto;
+        padding: 20px;
+    }
+    footer{
+        border:#134767;
+        text-align: center;
+        margin: auto;
+
+    }
+    ol{
+        list-style-type: none;
+    }
+    

@@ -3,7 +3,8 @@ import * as lsHelper from "./ls.js";
 
 export function addItem(itemsArray, item) {}
 
-export function displayList(list, element) {
+export function displayList(element) {
+  let list = lsHelper.readFromLS('items');
   const output = document.getElementById(element);
   output.innerHTML = "";
 

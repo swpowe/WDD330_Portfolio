@@ -1,0 +1,117 @@
+html{
+    background-color: #134767;
+}
+body{
+    background-color: #EFF5FB;
+    max-width: 950px;
+    text-align: center;
+    margin: auto;
+    padding: 60px;
+
+}
+    header{
+        background-color: rgb(107, 116, 116);
+        text-align: center;
+        margin: auto;
+        border: 6px ridge #1C6EA4;
+        border-radius: 13px 13px 13px 13px;
+        box-shadow: 0px 10px 13px -7px #000000, 8px 7px 11px 7px rgba(0,0,0,0.66);
+    }
+    main{
+        background-color: #9aa0a7;
+        align-content: center;
+        text-align: left;
+        margin: auto;
+        padding: 20px;
+        border: 6px ridge #1C6EA4;
+        border-radius: 13px 13px 13px 13px;
+        box-shadow: 0px 10px 13px -7px #000000, 8px 7px 11px 7px rgba(0,0,0,0.66); 
+    }
+    footer{
+        border:#134767;
+        text-align: center;
+        margin: auto;
+
+    }
+    ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        list-style-type: none;
+        background: rgba(218, 221, 223, 0.925);
+        font-size: 18px;
+        border: 6px ridge #1a6aa0;
+        border-radius: 13px 13px 13px 13px; 
+    }
+    ul li:hover {
+        background: rgb(186, 189, 190);
+    }
+    ul li.done {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+    }
+    ul li.done::before {
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+    }
+    /* Remove button */
+        .remove {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 8px ;
+            border-radius:50%;
+        }
+        .remove:hover {
+            background-color: #646262;
+            color: white;
+        }
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .addBtn {
+            margin: auto;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: 2px solid #555555;
+
+        }
+        .addBtn:hover {
+            background-color: rgb(173, 170, 170);
+            color: white;
+        }
+        .myInput{
+            margin: auto;
+            width: 45%;
+            padding: 10px;
+            border: 2px solid #414141;
+        }
+        .filterLi {
+            display: none;
+        }
+        .show {
+            display: list-item;
+        }
+        .filterBtn {
+            cursor: pointer;
+        }
+        .filterBtn:hover {
+            background-color: rgb(173, 170, 170);
+        }
+        .filterBtn.active {
+            background-color: rgb(116, 111, 111);
+            color: white;
+        }

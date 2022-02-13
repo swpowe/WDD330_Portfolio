@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Tony's titles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="WDD 330 Anthony Daley BYUI">
+        <script src="main.js"></script>
+        <link href="style.css" rel="stylesheet" media="all">
+        
+    </head>
+    <body>
+        <header>
+          <!--To do list input Div-->
+          <div id="inputDiv" class="inputHeader">
+            <h2 style="margin:5px">To Do List</h2>
+            <input type="text" id="myInput" class="myInput" placeholder="Title...">
+            <span onclick="newElement();filterSelection('all')" class="addBtn">Add</span>
+          </div>
+          
+        </header>
+
+        <main>
+          
+          <!--Unordered list for To do list items-->
+          <ul class="container" id="myUL">
+            <li class="filterLi done">This item has been completed</li>
+            <li class="filterLi done">This item has also been completed</li>
+            <li class="filterLi toDo">This item has <b>NOT</b> been completed</li>
+            <li class="filterLi toDo">This item has <b>NOT</b> been completed as well</li>
+            <li class="filterLi toDo">This item has also <b>NOT</b> been completed</li>
+          </ul>
+          
+        </main>
+
+        <footer>
+            <!--Filter Div-->
+          <div id="filterContainer" class="filterFooter">
+            <button class="filterBtn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="filterBtn" onclick="filterSelection('done')"> Complete</button>
+            <button class="filterBtn" onclick="filterSelection('toDo')"> Incomplete</button>
+          </div>
+            <p class="copy-rights">&copy; 2022 | Anthony J Daley | Soldotna, AK |   
+                <a href="https://www.byui.edu/online" target="_blank">BYUI Online Learning</a>
+            </p>
+          <script src="main.js"></script>
+        </footer>
+    </body>
+</html>
