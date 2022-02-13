@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: pink;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 8px;
+  align-items: center;
+  padding: 5px;
+  min-width: 20px;
+  max-width: 500px;
+}
+
+.item p {
+  flex-grow: 2;
+}
+
+.item-box,
+.item-del {
+  padding: 1px 5px;
+  width: 30px;
+  height: 30px;
+}
+
+input {
+  height: 30px;
+  width: 500px;
+  padding: 1px 5px;
+}
+
+.completed p {
+  text-decoration: line-through;
+}
+
+.add-items {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+.add-items button {
+  width: 20%;
+  align-self: flex-end;
+  padding: 8px;
+  margin-top: 2px;
+}
+
+.button-group button {
+  padding: 5px 10px;
+}
+
+.button-group button:active{ /* use this? */
+  background-color: darkgray;
+}
+
+.button-group .active{ /* or this? */
+  background-color: darkgray;
+}
