@@ -76,7 +76,7 @@ export default class Hikes {
     // We need to loop through the children of our list and attach a listener to each, remember though that children is a nodeList...not an array. So in order to use something like a forEach we need to convert it to an array.
     const childrenArray = Array.from(this.parentElement.children);
     childrenArray.forEach(child => {
-      child.addEventListener('touchend', e => {
+      child.addEventListener('click', e => {
         // why currentTarget instead of target?
         this.showOneHike(e.currentTarget.dataset.name);
       });
@@ -85,7 +85,7 @@ export default class Hikes {
   buildBackButton() {
     const backButton = document.createElement('button');
     backButton.innerHTML = '&lt;- All Hikes';
-    backButton.addEventListener('touchend', () => {
+    backButton.addEventListener('click', () => {
       this.showHikeList();
     });
     backButton.classList.add('hidden');
@@ -147,6 +147,15 @@ export function renderOneHikeFull(hike) {
         <div>
             <h3>How to get there</h3>
             <p>${hike.directions}</p>
+        </div>
+        <div>Comments:</div>
+        ${model.getAllComments(hike.name)}
+        <div>
+          <form>
+            <input type="text" placeholder="type your comment"></input>
+            <input type="hidden" value=${hike.name}> 
+            <button type=submit onclick=${model.addComment()}>Submit</button>
+          </form>
         </div>
     `;
   return item;

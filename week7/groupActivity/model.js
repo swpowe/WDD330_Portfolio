@@ -1,4 +1,6 @@
 import Comment from './Comment.js';
+import * as utilities from './utils.js';
+
 
 console.log("model loaded");
 // get comments data
@@ -11,6 +13,9 @@ const c4 = new Comment("Teton Canyon", "this is a comment 4");
 const c5 = new Comment("Denanda Falls", "this is a comment 5");
 
 comments.push(c1, c2, c3, c4, c5);
+
+utilities.writeToLS('comments', comments)
+
 
 export function getAllComments(name) {
     let commentsList = ''
