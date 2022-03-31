@@ -1,0 +1,26 @@
+html{
+    background-color: #134767;
+}
+body {
+    background-color: aliceblue;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    padding: 60px;
+}
+header{
+    background-color: rgb(107, 116, 116);
+    text-align: center;
+    margin: auto;
+}
+
+.quakeStyles {
+    list-style-type: order;
+    padding-left: 0;
+  }
+  .quakeStyles li {
+    margin: 0.5em 0;
+  }
+  .quakeStyles div {
+    font-size: 0.8em;
+  }
